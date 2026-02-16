@@ -98,3 +98,27 @@ Seaborn
 Large datasets like CICIDS 2017 are not included in this repository due to size limitations. Please download from official source.
 
 Now this README looks professional.
+
+
+
+
+📂 Projects Included
+🔴 1. Network Anomaly Detection
+
+Detecting DDoS attacks using the CICIDS 2017 dataset and Random Forest Classifier.
+
+🟣 2. Diabetes Prediction
+
+Predicting diabetes using Logistic Regression on the Pima Indians Diabetes dataset.
+
+🟡 3. Titanic Data Preprocessing
+
+Data cleaning and feature engineering on the Titanic dataset.
+
+🟢 4. Titanic Survival Prediction
+
+Building classification models to predict passenger survival.
+
+🔵 5. Sales Prediction using Linear Regression
+
+Predicting product sales based on advertising budget.
