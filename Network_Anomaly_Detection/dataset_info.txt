@@ -1,1 +1,8 @@
 
+Dataset not included due to large size.
+
+Download from:
+https://www.unb.ca/cic/datasets/ids-2017.html
+
+File used:
+Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
