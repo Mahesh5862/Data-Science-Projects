@@ -13,7 +13,8 @@ This project implements a Hybrid AI-based Phishing Detection System that analyze
 
 TF-IDF + Logistic Regression (Supervised Machine Learning)
 
-Transformer-based Semantic Similarity
+
+
 
 Hybrid Risk Aggregation Model
 
