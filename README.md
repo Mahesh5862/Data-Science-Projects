@@ -1,124 +1,242 @@
-# Data-Science-Projects
-projects
+Hybrid AI Phishing Detection System
+(Supervised ML + Transformer Semantic Intelligence)
 
 
-This repository contains machine learning projects completed during my Data Science Internship. The projects cover cybersecurity, healthcare, marketing analytics, and predictive modeling using real-world datasets.
 
-📂 Projects Overview
-🔴 1. Network Anomaly Detection (Major Project)
+🛡️ Hybrid AI Phishing Detection System
+Supervised Machine Learning + Transformer-Based Semantic Analysis
+📌 Project Overview
 
-Dataset: CICIDS 2017 (DDoS Detection)
-Model Used: Random Forest Classifier
+This project implements a Hybrid AI-based Phishing Detection System that analyzes user-entered messages and predicts phishing risk using a combination of:
 
-Objective:
-Detect malicious DDoS traffic from normal network traffic using flow-based features.
+TF-IDF + Logistic Regression (Supervised Machine Learning)
 
-Key Steps:
+Transformer-based Semantic Similarity
 
-Data Cleaning (NaN & Infinite removal)
+Hybrid Risk Aggregation Model
 
-Feature Selection
+Rule-based AI Explanation Layer
 
-Target Encoding
+Word-level Explainable AI
 
-Train-Test Split
+The system classifies messages into:
 
-Random Forest Training
+🟢 Likely Normal Communication
 
-Model Evaluation (Accuracy, Precision, Recall, F1-score)
+🟡 Suspicious Communication
 
-Feature Importance Analysis
+🔴 High Probability Phishing
 
-🟣 2. Diabetes Prediction (Minor Project)
+The final risk score is computed using both statistical probability and semantic similarity.
 
-Dataset: Pima Indians Diabetes Dataset
-Model: Logistic Regression
+🧠 AI Type Used in This Project
 
-Objective:
-Predict whether a patient has diabetes based on medical parameters.
+This project belongs to:
 
-Techniques Used:
+✔ Supervised Machine Learning
+✔ NLP-Based Classification
+✔ Transformer Embedding-Based Semantic Analysis
+✔ Hybrid AI System
 
-Feature Scaling
+It is NOT:
 
-Classification
+✘ Large Language Model (LLM)
+✘ Generative AI
+✘ Fine-tuned Transformer classifier
+
+The transformer is used only for sentence embeddings and semantic similarity.
+
+⚙️ System Architecture
+
+User Input
+→ TF-IDF Vectorization
+→ Logistic Regression → ML Probability Score
+→ Sentence Transformer → Semantic Similarity Score
+→ Hybrid Risk Aggregation
+→ AI Explanation + Prevention Advice
+→ Word-Level Feature Importance
+
+📊 Dataset Used
+
+File:
+
+data/phishing_dataset.csv
+
+Structure:
+
+text	label
+Message content	0 or 1
+
+Label Encoding:
+
+0 → Normal
+
+1 → Phishing
+
+The dataset is used to train and evaluate the Logistic Regression model.
+
+🤖 Models & Algorithms Used
+1️⃣ TF-IDF Vectorizer
+
+Converts text into numerical feature vectors.
+
+Captures word importance.
+
+Used as input to Logistic Regression.
+
+2️⃣ Logistic Regression (Supervised ML)
+
+Binary classification algorithm.
+
+Outputs phishing probability between 0 and 1.
+
+Used as the statistical prediction layer.
+
+3️⃣ Transformer Semantic Similarity
+
+Model Used:
+
+sentence-transformers/all-MiniLM-L6-v2
+
+Source:
+https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
+
+Purpose:
+
+Generates sentence embeddings.
+
+Measures semantic similarity between user input and phishing-like patterns.
+
+Produces contextual risk score.
+
+4️⃣ Hybrid Risk Aggregation
+
+Final Score formula:
+
+Final Score = (0.6 × ML Score) + (0.4 × Semantic Score)
+
+This balances:
+
+Statistical classification
+
+Contextual semantic similarity
+
+5️⃣ AI Explanation Layer
+
+The explanation module is rule-based and detects:
+
+Urgency language (urgent, immediately)
+
+Financial transaction words (bank, transfer, funds)
+
+Link-related terms (click, link)
+
+Account verification phrases (verify, account)
+
+It generates:
+
+Human-readable explanation
+
+Prevention advice based on risk level
+
+6️⃣ Explainable AI (ML Layer)
+
+The system extracts:
+
+Top influential words
+
+Logistic Regression coefficient impact
+
+This improves transparency and interpretability.
+
+📈 Model Evaluation Metrics
+
+The system evaluates performance using:
+
+Accuracy
+
+Precision
+
+Recall
+
+F1 Score
 
 Confusion Matrix
 
-Accuracy Evaluation
+These metrics are calculated on a held-out test set.
 
-🟡 3. Titanic Survival Prediction
+📂 Project Structure
+AI_Phishing_Detection/
+│
+├── app.py
+├── phishing_model.py
+├── data/
+│   └── phishing_dataset.csv
+├── requirements.txt
+└── README.md
+🚀 Installation & Setup
+1️⃣ Create Virtual Environment
 
-Dataset: Titanic Dataset
-Models Used: Decision Tree, Logistic Regression
+Windows:
 
-Objective:
-Predict passenger survival using demographic and ticket features.
+python -m venv venv
+venv\Scripts\activate
+2️⃣ Install Dependencies
+pip install streamlit
+pip install pandas
+pip install scikit-learn
+pip install sentence-transformers
 
-Techniques:
+Or:
 
-Data Cleaning
+pip install -r requirements.txt
+3️⃣ Run Application
+python -m streamlit run app.py
 
-Missing Value Handling
+The application will open in your browser.
 
-Feature Engineering
+🧪 Example Test Inputs
+🟢 Normal
 
-Model Comparison
+Please review the attached document and share feedback.
 
-🔵 4. Sales Prediction using Linear Regression
+🟡 Suspicious
 
-Dataset: Advertising Dataset
-Model: Linear Regression
+Please verify your account information before tomorrow.
 
-Objective:
-Predict product sales based on advertising budget.
+🔴 High Risk
 
-Metrics Used:
+URGENT: Transfer funds immediately to the bank account provided. Click the link now.
 
-R² Score
+📊 What This Project Demonstrates
 
-Mean Squared Error
+✔ Hybrid AI architecture
+✔ Supervised ML for phishing detection
+✔ Transformer-based semantic scoring
+✔ Risk aggregation model
+✔ Explainable AI
+✔ Real-time phishing risk analysis
+✔ Streamlit deployment
 
-🛠 Technologies Used
+⚖ What Exists in This Project
 
-Python
+✔ TF-IDF + Logistic Regression
+✔ Transformer semantic similarity
+✔ Hybrid scoring system
+✔ Rule-based explanation
+✔ Word-level interpretability
+✔ Performance metrics display
 
-Pandas
+❌ What Does Not Exist
 
-NumPy
+❌ Fine-tuned BERT model
+❌ LLM-based reasoning
+❌ Generative AI text generation
+❌ Real-time email server integration
+❌ Enterprise deployment
 
-Scikit-Learn
+🧠 Conclusion
 
-Matplotlib
+This project combines classical supervised machine learning and transformer-based semantic intelligence to build a hybrid phishing detection system with explainability and risk advisory features.
 
-Seaborn
-
-📌 Note
-
-Large datasets like CICIDS 2017 are not included in this repository due to size limitations. Please download from official source.
-
-Now this README looks professional.
-
-
-
-
-📂 Projects Included
-🔴 1. Network Anomaly Detection
-
-Detecting DDoS attacks using the CICIDS 2017 dataset and Random Forest Classifier.
-
-🟣 2. Diabetes Prediction
-
-Predicting diabetes using Logistic Regression on the Pima Indians Diabetes dataset.
-
-🟡 3. Titanic Data Preprocessing
-
-Data cleaning and feature engineering on the Titanic dataset.
-
-🟢 4. Titanic Survival Prediction
-
-Building classification models to predict passenger survival.
-
-🔵 5. Sales Prediction using Linear Regression
-
-Predicting product sales based on advertising budget.
+It demonstrates practical application of NLP, ML, and hybrid AI architecture in cybersecurity.
