@@ -1,6 +1,8 @@
 Hybrid AI Phishing Detection System
 (Supervised ML + Transformer Semantic Intelligence)
 
+live demo app 
+🚀 Live Demo: https://your-app-name.streamlit.app
 
 
 🛡️ Hybrid AI Phishing Detection System
