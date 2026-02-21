@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from phishing_model import PhishingDetector
 
 st.set_page_config(page_title="hybrid_ai_phishing_detection", layout="centered")
@@ -53,7 +54,11 @@ def generate_explanation(text, final_score):
 @st.cache_resource
 def load_model():
     model = PhishingDetector()
-    model.train("phishing_dataset.csv")
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    DATA_PATH = os.path.join(BASE_DIR, "phishing_dataset.csv")
+
+    model.train(DATA_PATH)
     return model
 
 detector = load_model()
