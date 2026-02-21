@@ -53,7 +53,7 @@ def generate_explanation(text, final_score):
 @st.cache_resource
 def load_model():
     model = PhishingDetector()
-    model.train("data/phishing_dataset.csv")
+    model.train("phishing_dataset.csv")
     return model
 
 detector = load_model()
