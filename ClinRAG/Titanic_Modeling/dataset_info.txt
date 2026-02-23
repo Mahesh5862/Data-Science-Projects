@@ -1,8 +1,0 @@
-📊 Dataset Used:
-titanic.csv
-
-📥 Direct Download:
-
-👉 https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv
-
-Rows: 891
