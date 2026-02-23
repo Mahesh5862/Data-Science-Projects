@@ -53,7 +53,12 @@ def generate_explanation(text, final_score):
 @st.cache_resource
 def load_model():
     model = PhishingDetector()
-    model.train("phishing_dataset.csv")
+    import os
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    DATA_PATH = os.path.join(BASE_DIR, "phishing_dataset.csv")
+    
+    model.train(DATA_PATH)
     return model
 
 detector = load_model()
