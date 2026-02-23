@@ -1,6 +1,6 @@
 import requests
 import json
-
+import os
 
 def fetch_trials(condition, save_path):
     query_term = condition.split(",")[0].strip()
@@ -12,6 +12,10 @@ def fetch_trials(condition, save_path):
     if response.status_code == 200:
         data = response.json()
 
+        # 🔥 CREATE FOLDER IF NOT EXISTS
+        os.makedirs(os.path.dirname(save_path), exist_ok=True)
+
+        # 🔥 SAVE FILE
         with open(save_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
 
