@@ -142,7 +142,7 @@ if mode == "Patient Screening":
             if matches:
 
                 df = pd.DataFrame(matches)
-                st.dataframe(df[["nct_id", "score", "eligibility_status"]], width="stretch")
+                st.dataframe(df[["nct_id", "score", "eligibility_status"]])
 
                 selected_trial = matches[0]
 
