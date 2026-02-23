@@ -98,7 +98,8 @@ if mode == "Patient Screening":
 
     st.header("Patient → Trial Screening")
 
-    patients_folder = "data/ehr_samples"
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    patients_folder = os.path.join(BASE_DIR, "data", "ehr_samples")
     patient_files = os.listdir(patients_folder)
 
     selected_patient_file = st.selectbox(
