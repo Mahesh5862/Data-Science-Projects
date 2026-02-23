@@ -124,4 +124,4 @@ st.write(f"Recall: {round(detector.recall * 100, 2)}%")
 st.write(f"F1 Score: {round(detector.f1 * 100, 2)}%")
 
 st.markdown("### 📉 Confusion Matrix")
-st.write(detector.conf_matrix) make more stylish and user interface level dont modify my code just its look like creative and not just like basic and super attracting colurs and headings and colurs and sub heading and different different coulurs to this and thsi i submitted in the deploy lareay how can i change theere through github?? and an dlaso can i make web extension like adding to to chrome or emial like web extension integration give ech detaiks where can i and how i integrate?? 
+st.write(detector.conf_matrix) 
