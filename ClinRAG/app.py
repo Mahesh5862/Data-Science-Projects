@@ -228,7 +228,7 @@ if mode == "Trial Recruitment":
 
             if eligible_patients:
                 df = pd.DataFrame(eligible_patients)
-                st.dataframe(df, width="stretch")
+                st.dataframe(df)
             else:
                 st.warning("No eligible patients found.")
 
