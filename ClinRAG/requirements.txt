@@ -1,0 +1,9 @@
+langchain
+chromadb
+openai
+pandas
+numpy
+streamlit
+tiktoken
+pydantic
+fhir.resources

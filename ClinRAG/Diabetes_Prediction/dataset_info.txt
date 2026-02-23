@@ -1,0 +1,10 @@
+🟣 2️⃣ MINI PROJECT
+📁 File: Mini_project.ipynb
+📊 Dataset Used:
+pima-indians-diabetes.data.csv
+
+📥 Direct Download:
+
+👉 https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv
+
+Small dataset (~768 rows).
