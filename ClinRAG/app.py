@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import os
+
 
 from src.reverse_trial_matcher import find_eligible_patients_for_trial
 from src.data_loader import load_patient_data
@@ -10,6 +10,9 @@ from src.trial_matcher import load_trials, match_trials
 from src.rag_eligibility_engine import generate_eligibility_reasoning
 from src.risk_scoring import calculate_risk_score
 from src.risk_disclosure import generate_risk_disclosure
+
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 st.set_page_config(
     page_title="ClinRAG™",
@@ -110,7 +113,8 @@ if mode == "Patient Screening":
     patient_path = os.path.join(patients_folder, selected_patient_file)
     patient = load_patient_data(patient_path)
 
-    icd_dict = load_icd_codes("data/icd_mapping/icd10cm_codes_2025.txt")
+    icd_path = os.path.join(BASE_DIR, "data", "icd_mapping", "icd10cm_codes_2025.txt")
+    icd_dict = load_icd_codes(icd_path)
     normalized = normalize_conditions(patient["conditions"], icd_dict)
     patient["conditions"] = [n["normalized"] for n in normalized]
 
@@ -128,9 +132,10 @@ if mode == "Patient Screening":
 
         if st.button("Find Matching Trials"):
 
-            save_file = "data/clinical_trials/dynamic_trials.json"
+            
             fetch_trials(selected_condition, save_file)
 
+            save_file = os.path.join(BASE_DIR, "data", "clinical_trials", "dynamic_trials.json")
             trials = load_trials(save_file)
             matches = match_trials(patient, trials)
 
@@ -172,7 +177,7 @@ if mode == "Trial Recruitment":
 
     # ---------------- GET ALL DISEASES FROM PATIENT DATABASE ----------------
 
-    patients_folder = "data/ehr_samples"
+    patients_folder = os.path.join(BASE_DIR, "data", "ehr_samples")
     patient_files = os.listdir(patients_folder)
 
     all_conditions = []
