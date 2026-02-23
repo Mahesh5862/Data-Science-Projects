@@ -132,10 +132,10 @@ if mode == "Patient Screening":
 
         if st.button("Find Matching Trials"):
 
-            
+            save_file = os.path.join(BASE_DIR, "data", "clinical_trials", "dynamic_trials.json")
             fetch_trials(selected_condition, save_file)
 
-            save_file = os.path.join(BASE_DIR, "data", "clinical_trials", "dynamic_trials.json")
+            #save_file = os.path.join(BASE_DIR, "data", "clinical_trials", "dynamic_trials.json")
             trials = load_trials(save_file)
             matches = match_trials(patient, trials)
 
