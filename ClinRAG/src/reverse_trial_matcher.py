@@ -1,6 +1,6 @@
 import os
-from data_loader import load_patient_data
-from trial_matcher import match_trials
+from src.data_loader import load_patient_data
+from src.trial_matcher import match_trials
 
 
 def find_eligible_patients_for_trial(trial):
